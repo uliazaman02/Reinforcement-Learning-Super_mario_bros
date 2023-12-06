@@ -10,6 +10,7 @@ import torch
 from src.env import create_train_env
 from src.model import ActorCritic
 import torch.nn.functional as F
+import gym
 
 
 def get_args():
@@ -21,6 +22,9 @@ def get_args():
     parser.add_argument("--saved_path", type=str, default="trained_models")
     parser.add_argument("--output_path", type=str, default="output")
     args = parser.parse_args()
+    print("args: ", args)
+    print("gym: ", gym.__version__)
+    print("torch.backends.mps.is_available()", torch.backends.mps.is_available())
     return args
 
 
@@ -30,11 +34,13 @@ def test(opt):
                                                     "{}/video_{}_{}.mp4".format(opt.output_path, opt.world, opt.stage))
     model = ActorCritic(num_states, num_actions)
     if torch.cuda.is_available():
-        model.load_state_dict(torch.load("{}/a3c_super_mario_bros_{}_{}".format(opt.saved_path, opt.world, opt.stage)))
+        # model.load_state_dict(torch.load("{}/a3c_super_mario_bros_{}_{}".format(opt.saved_path, opt.world, opt.stage)))
+        model.load_state_dict(torch.load("{}/a2c_super_mario_bros_1_1(6).pt".format(opt.saved_path)))
         model.cuda()
     else:
-        model.load_state_dict(torch.load("{}/a3c_super_mario_bros_{}_{}".format(opt.saved_path, opt.world, opt.stage),
-                                         map_location=lambda storage, loc: storage))
+        # model.load_state_dict(torch.load("{}/a3c_super_mario_bros_{}_{}".format(opt.saved_path, opt.world, opt.stage),
+        #                                  map_location=lambda storage, loc: storage))
+        model.load_state_dict(torch.load("{}/a2c_super_mario_bros_1_1 (6).pt".format(opt.saved_path), map_location=lambda storage, loc: storage))
     model.eval()
     state = torch.from_numpy(env.reset())
     done = True
