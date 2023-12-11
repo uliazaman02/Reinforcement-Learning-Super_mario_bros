@@ -1,28 +1,26 @@
-# [PYTORCH] Asynchronous Advantage Actor-Critic (A3C) for playing Super Mario Bros
+# Advantage Actor-Critic (A2C) and Asynchronous Advantage Actor-Critic (A3C) for playing Super Mario Bros
+
+## Introduction
+
+This repo is a class project for CompSci 175. 
+
+## Explanations for each file:
+
+* **demo/:** This folder includes demos of trained models in gif format.
+* **output/:** This folder includes demos of trained models in mp4 format.
+* **src/:**
+* **A3C_train.py:** This file includes the original code for the A3C model. It can be run with the command: **python A3C_train.py**
+* **A2C_Model_B_train.py:** This file includes our A2C model which was adapted from the A3C model. It can be run with the command: **python A2C_Model_B_train.py**
+* **test.py:** This file is used to test a trained model. First, the name of the model that you want to test needs to be changed in this file. It can be run with the command:  **python test.py**
+
+## Acknowledgements
+This repo was forked from: https://github.com/uvipen/Super-mario-bros-A3C-pytorch. Thank you to @uvipen for the A3C model code. The original author's README is below.
 
 ## Introduction
 
 Here is my python source code for training an agent to play super mario bros. By using Asynchronous Advantage Actor-Critic (A3C) algorithm introduced in the paper **Asynchronous Methods for Deep Reinforcement Learning** [paper](https://arxiv.org/abs/1602.01783).
 <p align="center">
   <img src="demo/video_1_1.gif" width="200">
-  <img src="demo/video_1_2.gif" width="200">
-  <img src="demo/video_1_4.gif" width="200">
-  <img src="demo/video_2_1.gif" width="200"><br/>
-  <img src="demo/video_2_2.gif" width="200">
-  <img src="demo/video_2_3.gif" width="200">
-  <img src="demo/video_2_4.gif" width="200">
-  <img src="demo/video_3_1.gif" width="200"><br/>
-  <img src="demo/video_3_2.gif" width="200">
-  <img src="demo/video_3_3.gif" width="200">
-  <img src="demo/video_3_4.gif" width="200">
-  <img src="demo/video_4_1.gif" width="200"><br/>
-  <img src="demo/video_5_1.gif" width="200">
-  <img src="demo/video_6_1.gif" width="200">
-  <img src="demo/video_6_3.gif" width="200">
-  <img src="demo/video_7_1.gif" width="200"><br/>
-  <img src="demo/video_7_3.gif" width="200">
-  <img src="demo/video_8_2.gif" width="200">
-  <img src="demo/video_8_3.gif" width="200"><br/>
   <i>Sample results</i>
 </p>
 
@@ -47,7 +45,7 @@ If an agent discovers environment alone, the learning process would be slow. Mor
 ## How to use my code
 
 With my code, you can:
-* **Train your model** by running **python train.py**
+* **Train model** by running **python train.py**
 * **Test your trained model** by running **python test.py**
 
 ## Trained models
@@ -62,5 +60,3 @@ You could find some trained models I have trained in [Super Mario Bros A3C train
 * **pytorch** 
 * **numpy**
 
-## Acknowledgements
-At the beginning, I could only train my agent to complete 9 stages. Then @davincibj pointed out that 19 stages could be completed and sent me the trained weights. Thank you a lot for the finding!
