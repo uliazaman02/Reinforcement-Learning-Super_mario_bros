@@ -8,10 +8,15 @@ This repo is a class project for CompSci 175.
 
 * **demo/:** This folder includes demos of trained models in gif format.
 * **output/:** This folder includes demos of trained models in mp4 format.
-* **src/:**
-* **A3C_train.py:** This file includes the original code for the A3C model. It can be run with the command: **python A3C_train.py**
-* **A2C_Model_B_train.py:** This file includes our A2C model which was adapted from the A3C model. It can be run with the command: **python A2C_Model_B_train.py**
-* **test.py:** This file is used to test a trained model. First, the name of the model that you want to test and the action_type needs to be changed in this file. It can be run with the command:  **python test.py**
+* **src/A3C_train.py:** This file includes the original code for the A3C model. It can be run with the command: **python A3C_train.py**
+* **src/A2C_Model_B_train.py:** This file includes our A2C model which was adapted from the A3C model. It can be run with the command: **python A2C_Model_B_train.py**
+* **src/test.py:** This file is used to test a trained model. First, the name of the model that you want to test and the action_type needs to be changed in this file. It can be run with the command:  **python test.py**
+* **src/env.py:**  This file was from the A3C implementation. This model sets up the environment for the game and includes custom wrapper functions.
+* **src/model.py:**  This file was from the A3C implementation. It includes the Actor-Critic class.
+* **src/optimizer.py:** This file was from the A3C implementation. It assists with the policy gradient.
+* **src/process.py:** This file was from the A3C implementation. It includes local_train and local_test.
+* **trained_models/:** This folder includes all of the models that we trained.
+* **tensorboard/:** This was used by the A3C implementation to visualize their training progress.
 
 ## Acknowledgements
 This repo was forked from: https://github.com/uvipen/Super-mario-bros-A3C-pytorch. Thank you to @uvipen for the A3C model code. The original author's README is below.

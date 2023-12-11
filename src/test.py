@@ -3,8 +3,8 @@ import os
 os.environ['OMP_NUM_THREADS'] = '1'
 import argparse
 import torch
-from src.env import create_train_env
-from src.model import ActorCritic
+from env import create_train_env
+from model import ActorCritic
 import torch.nn.functional as F
 
 
