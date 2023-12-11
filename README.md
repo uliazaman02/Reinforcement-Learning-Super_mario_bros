@@ -18,6 +18,8 @@ This repo is a class project for CompSci 175.
 * **trained_models/:** This folder includes all of the models that we trained.
 * **tensorboard/:** This was used by the A3C implementation to visualize their training progress.
 
+Note: in order to run a train or test file, the file must be moved out of the /src folder and into the home directory. This is because of the 'saved_path' and 'output_path' variables.
+
 ## Acknowledgements
 This repo was forked from: https://github.com/uvipen/Super-mario-bros-A3C-pytorch. Thank you to @uvipen for the A3C model code. The original author's README is below.
 
